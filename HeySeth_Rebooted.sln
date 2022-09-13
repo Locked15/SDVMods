@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbrellas_Rebooted", "_Rebooted\Umbrellas_Rebooted\Umbrellas_Rebooted.csproj", "{51E586B4-37F8-438C-B734-F4233489D9B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Classic", "Classic", "{E71BBDAB-8C27-422A-A813-136B4EFEAF19}"
+	ProjectSection(SolutionItems) = preProject
+		_Old\heysethSitPause\heysethSitPause.sln = _Old\heysethSitPause\heysethSitPause.sln
+		_Old\heysethUmbrellas\heysethUmbrellas.sln = _Old\heysethUmbrellas\heysethUmbrellas.sln
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51E586B4-37F8-438C-B734-F4233489D9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E586B4-37F8-438C-B734-F4233489D9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E586B4-37F8-438C-B734-F4233489D9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E586B4-37F8-438C-B734-F4233489D9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3242C893-0209-4EEB-9616-793A50D2F0A5}
+	EndGlobalSection
+EndGlobal

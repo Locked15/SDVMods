@@ -1,0 +1,84 @@
+{
+  // #region 'Options'.
+
+  "option.basic-options": "Basic Options",
+  "option.basic-options.desc": "Basic Options Of The Mod.",
+
+  "option.wetness-enabled": "Wetness Is Enabled",
+  "option.wetness-enabled.desc": "If this box is checked, the farmer will get wet when standing outside in the rain without an umbrella. When the farmer is wet, stamina will be slowly drained. More information about the wetness system can be found on the mod page.",
+
+  "option.redraw-enabled": "Redraw Is Enabled",
+  "option.redraw-enabled.desc": "If sets true, farmer sprite will redraw, when you using tools.\nBut remember: This option will overwrite other mods, that affect farmer sprite.",
+
+
+  "option.multiplier-options": "Multiplier Options",
+  "option.multiplier-options.desc": "Multiplier Options, To Set Numeric And Change Balance.",
+
+  "option.stamina-drain": "Stamina Drain",
+  "option.stamina-drain.desc": "How much stamina to drain every 10 minutes (in game time) when the farmer is wet.",
+
+  "option.best-hats-protection": "Best Hats Protection",
+  "option.best-hats-protection.desc": "Percent Of Drenching Shield, Gained By Wearing One Of Best Hats (Base Value: 0.9).\nSetted Value Represents A Percent, So Value 0.9 Will Mean 90%.",
+
+  "option.good-hats-protection": "Good Hats Protection",
+  "option.good-hats-protection.desc": "Percent Of Drenching Shield, Gained By Wearing One Of Good Hats (Base Value: 0.5).\nSetted Value Represents A Percent, So Value 0.5 Will Mean 50%.",
+
+  "option.shirt-protection": "Shirts Protection",
+  "option.shirt-protection.desc": "Percent Of Drenching Shield, Gained By Wearing One Of Protection Shirts (Base Value: 0.2).\nSetted Value Represents A Percent, So Value 0.2 Will Mean 20%.",
+
+
+  "option.advanced-options": "Advanced Options",
+  "option.advanced-options.desc": "Advanced Options Of The Mod, To More Accuracy Setting.",
+
+  "option.best-hats": "Best Hats",
+  "option.best-hats.desc": "List Of The Best Water-Proofing Hats (Base: 90%).\nSeparated With Comma (Without Empty Spaces Between Names).",
+
+  "option.good-hats": "Good Hats",
+  "option.good-hats.desc": "List Of The Good Water-Proofing Hats (Base: 50%).\nSeparated With Comma (Without Empty Spaces Between Names).",
+
+  "option.shirt-names": "Waterproof Shirts",
+  "option.shirt-names.desc": "List Of The Water-Proofing Shirts (Base: 20%).\nSeparated With Comma (Without Empty Spaces Between Names).",
+
+  "option.exception-locations": "Exception Locations",
+  "option.exception-locations.desc": "List Of Locations, That Wont Have Common Drenching (Debuffing) Rules.\nSeparated With Comma (Without Empty Spaces Between Names).",
+  // #endregion 'Options'.
+
+  // #region 'Shops And Letters'.
+
+  "shops.mouse": "Hiyo, poke. Did you bring coins? Gud. Me sell hats and umbrellas.",
+
+  "letters.mouse": "Hi.^^Me sell hats and umbrellas. Okay, poke?^^Come to old old old haus, poke. Bring coines.^^-hat mouse[#]Hiyo, Poke",
+  "letters.lewis": "@,^I found this old umbrella lying around, I figure it could be useful to you on rainy days.  ^   Sincerely, Mr. Lewis",
+  // #endregion 'Shops And Letters'.
+
+  // #region 'UI Strings'.
+
+  "ui.water-proof": "\nWater Proof:",
+  "ui.proof-level.major": "\nProvides major rain protection.",
+  "ui.proof-level.moderate": "\nProvides moderate rain protection.",
+  "ui.proof-level.slight": "\nProvides slight rain protection.",
+
+  "ui.add-energy": "+ Energy",
+  // #endregion 'UI Strings'.
+
+  // #region 'Debuffs'.
+
+  "debuff.header": "Drenched",
+
+  "debuff.body": "You are drenched. Now you will lose you stamina.",
+  "debuff.source": "Rain",
+  // #endregion 'Debuffs'.
+
+  // #region 'Umbrellas Names'.
+
+  "umbrella.Tattered": "Tattered Umbrella",
+
+  "umbrella.Red": "Red Umbrella",
+  "umbrella.Orange": "Orange Umbrella",
+  "umbrella.Yellow": "Yellow Umbrella",
+  "umbrella.Green": "Green Umbrella",
+  "umbrella.Blue": "Blue Umbrella",
+  "umbrella.Purple": "Purple Umbrella",
+  "umbrella.Black": "Black Umbrella"
+  // #endregion 'Umbrellas Names'.
+}
