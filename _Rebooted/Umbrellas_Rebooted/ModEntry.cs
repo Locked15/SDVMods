@@ -9,6 +9,7 @@ using StardewValley.Menus;
 using StardewValley.Tools;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Umbrellas_Rebooted.Logic;
@@ -83,31 +84,32 @@ namespace Umbrellas_Rebooted
             }
 
             Helper.WriteConfig(Config);
+            string assetsPath = Config.NudityCompatibility ? "assets/nude" : "assets/common";
 
             FarmerRendererPatches.Initialize(Monitor);
             UmbrellaPatch.Initialize(Monitor);
 
             //add new umbrellas here
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>("assets/tattered/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>("assets/red/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>("assets/orange/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>("assets/yellow/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>("assets/green/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>("assets/blue/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>("assets/purple/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>("assets/black/umbrella_overlay_back.png"));
-            //umbrellaTextureBack.Add(this.Helper.ModContent.Load<Texture2D>("assets/pink/umbrella_overlay_back.png"));
+            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/tattered/umbrella_overlay_back.png"));
+            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/red/umbrella_overlay_back.png"));
+            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/orange/umbrella_overlay_back.png"));
+            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/yellow/umbrella_overlay_back.png"));
+            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/green/umbrella_overlay_back.png"));
+            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/blue/umbrella_overlay_back.png"));
+            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/purple/umbrella_overlay_back.png"));
+            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/black/umbrella_overlay_back.png"));
+            //umbrellaTextureBack.Add(this.Helper.ModContent.Load<Texture2D>($"{assetsPath}/pink/umbrella_overlay_back.png"));
 
             //add new umbrellas here
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>("assets/tattered/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>("assets/red/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>("assets/orange/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>("assets/yellow/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>("assets/green/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>("assets/blue/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>("assets/purple/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>("assets/black/umbrella_overlay_side.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>("assets/pink/umbrella_overlay_back.png"));
+            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/tattered/umbrella_overlay_side.png"));
+            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/red/umbrella_overlay_side.png"));
+            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/orange/umbrella_overlay_side.png"));
+            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/yellow/umbrella_overlay_side.png"));
+            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/green/umbrella_overlay_side.png"));
+            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/blue/umbrella_overlay_side.png"));
+            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/purple/umbrella_overlay_side.png"));
+            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/black/umbrella_overlay_side.png"));
+            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/pink/umbrella_overlay_back.png"));
 
             //Events
             helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
@@ -410,6 +412,8 @@ namespace Umbrellas_Rebooted
 
         public void Edit<T>(IAssetData asset)
         {
+            string assetsPath = Config.NudityCompatibility ? "assets/nude" : "assets/common";
+
             if (asset.Name.IsEquivalentTo("Strings/StringsFromCSFiles"))
             {
                 IDictionary<string, string> data = asset.AsDictionary<string, string>().Data;
@@ -502,22 +506,22 @@ namespace Umbrellas_Rebooted
             {
                 if (asset.Name.IsEquivalentTo("Characters/Farmer/farmer_girl_base"))
                 {
-                    asset.AsImage().PatchImage(Helper.ModContent.Load<Texture2D>("assets/farmer_base_girl.png"));
+                    asset.AsImage().PatchImage(Helper.ModContent.Load<Texture2D>($"{assetsPath}/farmer_base_girl.png"));
                 }
 
                 if (asset.Name.IsEquivalentTo("Characters/Farmer/farmer_base"))
                 {
-                    asset.AsImage().PatchImage(Helper.ModContent.Load<Texture2D>("assets/farmer_base_boy.png"));
+                    asset.AsImage().PatchImage(Helper.ModContent.Load<Texture2D>($"{assetsPath}/farmer_base_boy.png"));
                 }
 
                 if (asset.Name.IsEquivalentTo("Characters/Farmer/farmer_base_bald"))
                 {
-                    asset.AsImage().PatchImage(Helper.ModContent.Load<Texture2D>("assets/farmer_base_boy_bald.png"));
+                    asset.AsImage().PatchImage(Helper.ModContent.Load<Texture2D>($"{assetsPath}/farmer_base_boy_bald.png"));
                 }
 
                 if (asset.Name.IsEquivalentTo("Characters/Farmer/farmer_girl_base_bald"))
                 {
-                    asset.AsImage().PatchImage(Helper.ModContent.Load<Texture2D>("assets/farmer_base_girl_bald.png"));
+                    asset.AsImage().PatchImage(Helper.ModContent.Load<Texture2D>($"{assetsPath}/farmer_base_girl_bald.png"));
                 }
             }
 
@@ -624,68 +628,72 @@ namespace Umbrellas_Rebooted
         public void loadUmbrellaTextures()
         {
             umbrellaPlayerTextures.Clear();
+            string path = Config.NudityCompatibility ? "assets/nude" : "assets/common";
 
             // Add new umbrellas in here.
             if (isMaleFarmer)
             {
                 if (isBaldFarmer)
                 {
-                    regularFarmerTexture = Helper.ModContent.Load<Texture2D>("assets/farmer_base_boy_bald.png");
+                    regularFarmerTexture = Helper.ModContent.Load<Texture2D>($"{path}/farmer_base_boy_bald.png");
 
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/tattered/farmer_base_boy_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/red/farmer_base_boy_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/orange/farmer_base_boy_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/yellow/farmer_base_boy_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/green/farmer_base_boy_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/blue/farmer_base_boy_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/purple/farmer_base_boy_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/black/farmer_base_boy_bald.png"));
-                    //umbrellaPlayerTextures.Add(this.Helper.ModContent.Load<Texture2D>("assets/pink/farmer_base_boy_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/tattered/farmer_base_boy_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/red/farmer_base_boy_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/orange/farmer_base_boy_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/yellow/farmer_base_boy_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/green/farmer_base_boy_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/blue/farmer_base_boy_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/purple/farmer_base_boy_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/black/farmer_base_boy_bald.png"));
+                    //umbrellaPlayerTextures.Add(this.Helper.ModContent.Load<Texture2D>($"{path}/pink/farmer_base_boy_bald.png"));
                 }
+
                 else
                 {
-                    regularFarmerTexture = Helper.ModContent.Load<Texture2D>("assets/farmer_base_boy.png");
+                    regularFarmerTexture = Helper.ModContent.Load<Texture2D>($"{path}/farmer_base_boy.png");
 
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/tattered/farmer_base_boy.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/red/farmer_base_boy.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/orange/farmer_base_boy.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/yellow/farmer_base_boy.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/green/farmer_base_boy.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/blue/farmer_base_boy.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/purple/farmer_base_boy.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/black/farmer_base_boy.png"));
-                    //umbrellaPlayerTextures.Add(this.Helper.ModContent.Load<Texture2D>("assets/pink/farmer_base_boy.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/tattered/farmer_base_boy.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/red/farmer_base_boy.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/orange/farmer_base_boy.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/yellow/farmer_base_boy.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/green/farmer_base_boy.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/blue/farmer_base_boy.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/purple/farmer_base_boy.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/black/farmer_base_boy.png"));
+                    //umbrellaPlayerTextures.Add(this.Helper.ModContent.Load<Texture2D>($"{path}/pink/farmer_base_boy.png"));
                 }
             }
+
             else
             {
                 if (isBaldFarmer)
                 {
-                    regularFarmerTexture = Helper.ModContent.Load<Texture2D>("assets/farmer_base_girl_bald.png");
+                    regularFarmerTexture = Helper.ModContent.Load<Texture2D>($"{path}/farmer_base_girl_bald.png");
 
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/tattered/farmer_base_girl_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/red/farmer_base_girl_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/orange/farmer_base_girl_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/yellow/farmer_base_girl_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/green/farmer_base_girl_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/blue/farmer_base_girl_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/purple/farmer_base_girl_bald.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/black/farmer_base_girl_bald.png"));
-                    //umbrellaPlayerTextures.Add(this.Helper.ModContent.Load<Texture2D>("assets/pink/farmer_base_girl_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/tattered/farmer_base_girl_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/red/farmer_base_girl_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/orange/farmer_base_girl_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/yellow/farmer_base_girl_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/green/farmer_base_girl_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/blue/farmer_base_girl_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/purple/farmer_base_girl_bald.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/black/farmer_base_girl_bald.png"));
+                    //umbrellaPlayerTextures.Add(this.Helper.ModContent.Load<Texture2D>($"{path}/pink/farmer_base_girl_bald.png"));
                 }
+
                 else
                 {
-                    regularFarmerTexture = Helper.ModContent.Load<Texture2D>("assets/farmer_base_girl.png");
+                    regularFarmerTexture = Helper.ModContent.Load<Texture2D>($"{path}/farmer_base_girl.png");
 
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/tattered/farmer_base_girl.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/red/farmer_base_girl.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/orange/farmer_base_girl.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/yellow/farmer_base_girl.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/green/farmer_base_girl.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/blue/farmer_base_girl.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/purple/farmer_base_girl.png"));
-                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>("assets/black/farmer_base_girl.png"));
-                    //umbrellaPlayerTextures.Add(this.Helper.ModContent.Load<Texture2D>("assets/pink/farmer_base_girl.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/tattered/farmer_base_girl.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/red/farmer_base_girl.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/orange/farmer_base_girl.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/yellow/farmer_base_girl.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/green/farmer_base_girl.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/blue/farmer_base_girl.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/purple/farmer_base_girl.png"));
+                    umbrellaPlayerTextures.Add(Helper.ModContent.Load<Texture2D>($"{path}/black/farmer_base_girl.png"));
+                    //umbrellaPlayerTextures.Add(this.Helper.ModContent.Load<Texture2D>($"{path}/pink/farmer_base_girl.png"));
                 }
             }
         }

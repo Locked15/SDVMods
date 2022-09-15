@@ -4,6 +4,7 @@
     {
         internal bool RedrawEnabled { get; set; } = true;
         public bool EnableWetness { get; set; } = false;
+        public bool NudityCompatibility { get; set; } = false;
 
         public float StaminaDrainRate { get; set; } = 2.0f;
 
