@@ -9,7 +9,6 @@ using StardewValley.Menus;
 using StardewValley.Tools;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using Umbrellas_Rebooted.Logic;
@@ -109,7 +108,7 @@ namespace Umbrellas_Rebooted
             umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/blue/umbrella_overlay_side.png"));
             umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/purple/umbrella_overlay_side.png"));
             umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/black/umbrella_overlay_side.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/pink/umbrella_overlay_back.png"));
+            //umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/pink/umbrella_overlay_back.png"));
 
             //Events
             helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
@@ -137,6 +136,8 @@ namespace Umbrellas_Rebooted
 
         private void onMenuChanged(object sender, MenuChangedEventArgs e) // Handle when the player changes their appearance at the shrine of illusions
         {
+            CreateModMenu();
+
             if (changingAppearance)
             {
                 changingAppearance = false;
@@ -222,8 +223,6 @@ namespace Umbrellas_Rebooted
             {
                 Monitor.Log("Error loading JSON assets", LogLevel.Warn);
             }
-
-            CreateModMenu();
         }
 
         private void CreateModMenu()
@@ -445,8 +444,6 @@ namespace Umbrellas_Rebooted
                 if (asset.Name.IsEquivalentTo("Data/hats"))
                 {
                     IDictionary<int, string> data = asset.AsDictionary<int, string>().Data;
-
-                    // GenerateDefaultHatsInfo(data);
                 }
             }
 
@@ -735,7 +732,8 @@ namespace Umbrellas_Rebooted
             wetnessBuff.which = wetBuffIndex;
             wetnessBuff.sheetIndex = wetBuffIndex;
             wetnessBuff.millisecondsDuration = 10000;
-            wetnessBuff.description = $"{Helper.Translation.Get("debuff.header")}\n{Helper.Translation.Get("debuff.body")}";
+            wetnessBuff.description = Game1.player.IsMale ? Helper.Translation.Get("debuff.header.male") : Helper.Translation.Get("debuff.header.female") +
+                                      $"\n{Helper.Translation.Get("debuff.body")}";
         }
 
         private void OnUpdateTicked(object sender, UpdateTickedEventArgs e)

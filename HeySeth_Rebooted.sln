@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbrellas_Rebooted", "_Rebooted\Umbrellas_Rebooted\Umbrellas_Rebooted.csproj", "{51E586B4-37F8-438C-B734-F4233489D9B6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Classic", "Classic", "{E71BBDAB-8C27-422A-A813-136B4EFEAF19}"
 	ProjectSection(SolutionItems) = preProject
 		_Old\heysethSitPause\heysethSitPause.sln = _Old\heysethSitPause\heysethSitPause.sln
 		_Old\heysethUmbrellas\heysethUmbrellas.sln = _Old\heysethUmbrellas\heysethUmbrellas.sln
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rebooted", "Rebooted", "{1B98B367-CD4C-4D8A-B475-83C6C357F87C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Don't-Forget-Umbrella", "Don't-Forget-Umbrella", "{42EFC2F9-9849-4812-93EA-8FC3D75B901F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbrellas_Rebooted", "_Rebooted\Don't-Forget-Umbrella\Umbrellas_Rebooted\Umbrellas_Rebooted.csproj", "{A964720D-8393-44B8-B3E5-20E0C7EC32F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbrella Items", "_Rebooted\Don't-Forget-Umbrella\[JA] Umbrella Items\Umbrella Items.csproj", "{E6E53491-150C-495B-A155-FE80080FF2E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +23,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{51E586B4-37F8-438C-B734-F4233489D9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51E586B4-37F8-438C-B734-F4233489D9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51E586B4-37F8-438C-B734-F4233489D9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51E586B4-37F8-438C-B734-F4233489D9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A964720D-8393-44B8-B3E5-20E0C7EC32F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A964720D-8393-44B8-B3E5-20E0C7EC32F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A964720D-8393-44B8-B3E5-20E0C7EC32F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A964720D-8393-44B8-B3E5-20E0C7EC32F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6E53491-150C-495B-A155-FE80080FF2E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E53491-150C-495B-A155-FE80080FF2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E53491-150C-495B-A155-FE80080FF2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E53491-150C-495B-A155-FE80080FF2E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42EFC2F9-9849-4812-93EA-8FC3D75B901F} = {1B98B367-CD4C-4D8A-B475-83C6C357F87C}
+		{A964720D-8393-44B8-B3E5-20E0C7EC32F9} = {42EFC2F9-9849-4812-93EA-8FC3D75B901F}
+		{E6E53491-150C-495B-A155-FE80080FF2E7} = {42EFC2F9-9849-4812-93EA-8FC3D75B901F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3242C893-0209-4EEB-9616-793A50D2F0A5}

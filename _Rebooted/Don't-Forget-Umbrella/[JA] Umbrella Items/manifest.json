@@ -1,0 +1,12 @@
+{
+  "Name": "Umbrella Item",
+  "Author": "heyseth",
+  "Version": "1.0.2",
+  "MinimumApiVersion": "3.0.0",
+  "Description": "Adds the umbrella item to the game",
+  "UniqueID": "heyseth.umbrellaitem",
+  "UpdateKeys": [ "Nexus:8366", "GitHub:Locked15/SDVMods" ],
+  "ContentPackFor": {
+    "UniqueID": "spacechase0.JsonAssets"
+  }
+}

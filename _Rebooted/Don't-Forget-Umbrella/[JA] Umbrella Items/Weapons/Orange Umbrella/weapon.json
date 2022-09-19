@@ -1,0 +1,25 @@
+{
+  "Name": "Orange Umbrella",
+  "Description": "This is sure to keep you dry!#",
+  "Type": "Sword",
+  "MinimumDamage": 1,
+  "MaximumDamage": 1,
+  "Speed": 0,
+  "Accurary": 0,
+  "Defense": 0,
+  "Knockback": 1,
+  "CritChance": 0.01,
+  "CritMultiplier": 1,
+  "MineDropVar": -1,
+  "MineDropMinimumLevel": -1,
+  "CanPurchase": true,
+  "PurchaseFrom": "",
+  "PurchasePrice": 1000,
+  "Recipe": null,
+  "NameLocalization": {
+    "ru": "Оранжевый Зонт"
+  },
+  "DescriptionLocalization": {
+    "ru": "Поможет вам не промокнуть!"
+  }
+}

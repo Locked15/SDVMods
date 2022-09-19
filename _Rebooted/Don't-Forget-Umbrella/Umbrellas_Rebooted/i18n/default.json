@@ -10,7 +10,6 @@
   "option.redraw-enabled": "Redraw Is Enabled",
   "option.redraw-enabled.desc": "If sets true, farmer sprite will redraw, when you using tools.\nBut remember: This option will overwrite other mods, that affect farmer sprite.",
 
-
   "option.multiplier-options": "Multiplier Options",
   "option.multiplier-options.desc": "Multiplier Options, To Set Numeric And Change Balance.",
 
@@ -25,7 +24,6 @@
 
   "option.shirt-protection": "Shirts Protection",
   "option.shirt-protection.desc": "Percent Of Drenching Shield, Gained By Wearing One Of Protection Shirts (Base Value: 0.2).\nSetted Value Represents A Percent, So Value 0.2 Will Mean 20%.",
-
 
   "option.advanced-options": "Advanced Options",
   "option.advanced-options.desc": "Advanced Options Of The Mod, To More Accuracy Setting.",
@@ -63,7 +61,8 @@
 
   // #region 'Debuffs'.
 
-  "debuff.header": "Drenched",
+  "debuff.header.male": "Drenched",
+  "debuff.header.female": "Drenched",
 
   "debuff.body": "You are drenched. Now you will lose you stamina.",
   "debuff.source": "Rain",

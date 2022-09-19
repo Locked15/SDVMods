@@ -6,5 +6,5 @@
   "UniqueID": "heyseth.umbrellas",
   "EntryDll": "Umbrellas_Rebooted.dll",
   "MinimumApiVersion": "3.0.0",
-  "UpdateKeys": [ "Nexus:8366" ]
+  "UpdateKeys": [ "Nexus:8366", "GitHub:Locked15/SDVMods" ]
 }
