@@ -1,7 +1,7 @@
 {
   "Name": "Umbrella Item",
   "Author": "heyseth",
-  "Version": "1.0.2",
+  "Version": "1.2",
   "MinimumApiVersion": "3.0.0",
   "Description": "Adds the umbrella item to the game",
   "UniqueID": "heyseth.umbrellaitem",
