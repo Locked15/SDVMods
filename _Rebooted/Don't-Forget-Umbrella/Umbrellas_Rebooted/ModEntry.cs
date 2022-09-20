@@ -85,6 +85,7 @@ namespace Umbrellas_Rebooted
             Helper.WriteConfig(Config);
             string assetsPath = Config.NudityCompatibility ? "assets/nude" : "assets/common";
 
+            CreateModMenu();
             FarmerRendererPatches.Initialize(Monitor);
             UmbrellaPatch.Initialize(Monitor);
 
@@ -136,8 +137,6 @@ namespace Umbrellas_Rebooted
 
         private void onMenuChanged(object sender, MenuChangedEventArgs e) // Handle when the player changes their appearance at the shrine of illusions
         {
-            CreateModMenu();
-
             if (changingAppearance)
             {
                 changingAppearance = false;
