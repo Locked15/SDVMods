@@ -82,57 +82,58 @@ namespace Umbrellas_Rebooted
                 Config = new UmbrellaConfig();
             }
 
-            Helper.WriteConfig(Config);
             string assetsPath = Config.NudityCompatibility ? "assets/nude" : "assets/common";
 
-            CreateModMenu();
-            FarmerRendererPatches.Initialize(Monitor);
-            UmbrellaPatch.Initialize(Monitor);
+            if (Config.EnableMod)
+            {
+                FarmerRendererPatches.Initialize(Monitor);
+                UmbrellaPatch.Initialize(Monitor);
 
-            //add new umbrellas here
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/tattered/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/red/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/orange/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/yellow/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/green/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/blue/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/purple/umbrella_overlay_back.png"));
-            umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/black/umbrella_overlay_back.png"));
-            //umbrellaTextureBack.Add(this.Helper.ModContent.Load<Texture2D>($"{assetsPath}/pink/umbrella_overlay_back.png"));
+                //add new umbrellas here
+                umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/tattered/umbrella_overlay_back.png"));
+                umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/red/umbrella_overlay_back.png"));
+                umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/orange/umbrella_overlay_back.png"));
+                umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/yellow/umbrella_overlay_back.png"));
+                umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/green/umbrella_overlay_back.png"));
+                umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/blue/umbrella_overlay_back.png"));
+                umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/purple/umbrella_overlay_back.png"));
+                umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/black/umbrella_overlay_back.png"));
+                //umbrellaTextureBack.Add(this.Helper.ModContent.Load<Texture2D>($"{assetsPath}/pink/umbrella_overlay_back.png"));
 
-            //add new umbrellas here
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/tattered/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/red/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/orange/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/yellow/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/green/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/blue/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/purple/umbrella_overlay_side.png"));
-            umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/black/umbrella_overlay_side.png"));
-            //umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/pink/umbrella_overlay_back.png"));
+                //add new umbrellas here
+                umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/tattered/umbrella_overlay_side.png"));
+                umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/red/umbrella_overlay_side.png"));
+                umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/orange/umbrella_overlay_side.png"));
+                umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/yellow/umbrella_overlay_side.png"));
+                umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/green/umbrella_overlay_side.png"));
+                umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/blue/umbrella_overlay_side.png"));
+                umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/purple/umbrella_overlay_side.png"));
+                umbrellaTextureSide.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/black/umbrella_overlay_side.png"));
+                //umbrellaTextureBack.Add(Helper.ModContent.Load<Texture2D>($"{assetsPath}/pink/umbrella_overlay_back.png"));
 
-            //Events
-            helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
-            helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
-            helper.Events.GameLoop.ReturnedToTitle += OnReturnedToTitle;
-            helper.Events.GameLoop.GameLaunched += OnGameLaunched;
-            helper.Events.Display.MenuChanged += onMenuChanged;
+                //Events
+                helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
+                helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
+                helper.Events.GameLoop.ReturnedToTitle += OnReturnedToTitle;
+                helper.Events.GameLoop.GameLaunched += OnGameLaunched;
+                helper.Events.Display.MenuChanged += onMenuChanged;
 
-            harmony = new Harmony(ModManifest.UniqueID);
+                harmony = new Harmony(ModManifest.UniqueID);
 
-            //Harmony Patches
-            harmony.Patch(
-                original: AccessTools.Method(typeof(FarmerRenderer), nameof(FarmerRenderer.draw),
-                new Type[] { typeof(SpriteBatch), typeof(FarmerSprite.AnimationFrame), typeof(int), typeof(Rectangle), typeof(Vector2), typeof(Vector2), typeof(float), typeof(int), typeof(Color), typeof(float), typeof(float), typeof(Farmer) }),
-                postfix: new HarmonyMethod(typeof(FarmerRendererPatches), nameof(FarmerRendererPatches.draw_Postfix))
-            );
+                //Harmony Patches
+                harmony.Patch(
+                    original: AccessTools.Method(typeof(FarmerRenderer), nameof(FarmerRenderer.draw),
+                    new Type[] { typeof(SpriteBatch), typeof(FarmerSprite.AnimationFrame), typeof(int), typeof(Rectangle), typeof(Vector2), typeof(Vector2), typeof(float), typeof(int), typeof(Color), typeof(float), typeof(float), typeof(Farmer) }),
+                    postfix: new HarmonyMethod(typeof(FarmerRendererPatches), nameof(FarmerRendererPatches.draw_Postfix))
+                );
 
-            harmony.Patch(
-                original: AccessTools.Method(typeof(IClickableMenu), nameof(IClickableMenu.drawHoverText),
-                new Type[] { typeof(SpriteBatch), typeof(StringBuilder), typeof(SpriteFont), typeof(int), typeof(int), typeof(int), typeof(string), typeof(int), typeof(string[]), typeof(Item), typeof(int), typeof(int), typeof(int), typeof(int), typeof(int), typeof(float), typeof(CraftingRecipe), typeof(IList<Item>) }),
-                prefix: new HarmonyMethod(typeof(UmbrellaPatch), nameof(UmbrellaPatch.drawHoverTextPrefix)),
-                postfix: new HarmonyMethod(typeof(UmbrellaPatch), nameof(UmbrellaPatch.drawHoverTextPostfix))
-            );
+                harmony.Patch(
+                    original: AccessTools.Method(typeof(IClickableMenu), nameof(IClickableMenu.drawHoverText),
+                    new Type[] { typeof(SpriteBatch), typeof(StringBuilder), typeof(SpriteFont), typeof(int), typeof(int), typeof(int), typeof(string), typeof(int), typeof(string[]), typeof(Item), typeof(int), typeof(int), typeof(int), typeof(int), typeof(int), typeof(float), typeof(CraftingRecipe), typeof(IList<Item>) }),
+                    prefix: new HarmonyMethod(typeof(UmbrellaPatch), nameof(UmbrellaPatch.drawHoverTextPrefix)),
+                    postfix: new HarmonyMethod(typeof(UmbrellaPatch), nameof(UmbrellaPatch.drawHoverTextPostfix))
+                );
+            }
         }
 
         private void onMenuChanged(object sender, MenuChangedEventArgs e) // Handle when the player changes their appearance at the shrine of illusions
@@ -212,6 +213,8 @@ namespace Umbrellas_Rebooted
 
         public void OnGameLaunched(object sender, GameLaunchedEventArgs e)
         {
+            CreateModMenu();
+
             try
             {
                 JsonAssets = Helper.ModRegistry.GetApi<IJsonAssetsApi>("spacechase0.JsonAssets");
@@ -250,6 +253,16 @@ namespace Umbrellas_Rebooted
                         mod: ModManifest,
                         text: () => Helper.Translation.Get("option.basic-options"),
                         tooltip: () => Helper.Translation.Get("option.basic-options.desc")
+                    );
+
+                    // 'Wetness Enable' Option.
+                    configMenu.AddBoolOption
+                    (
+                        mod: ModManifest,
+                        name: () => Helper.Translation.Get("option.mod-enabled"),
+                        tooltip: () => Helper.Translation.Get("option.mod-enabled.desc"),
+                        getValue: () => Config.EnableMod,
+                        setValue: value => Config.EnableMod = value
                     );
 
                     // 'Wetness Enable' Option.

@@ -4,6 +4,9 @@
   "option.basic-options": "Basic Options",
   "option.basic-options.desc": "Basic Options Of The Mod.",
 
+  "option.mod-enabled": "Mod Is Enabled?",
+  "option.mod-enabled.desc": "Enables or Disables mod loading sequence.\nIf sets 'False' mod will not be loaded.",
+
   "option.wetness-enabled": "Wetness Is Enabled",
   "option.wetness-enabled.desc": "If this box is checked, the farmer will get wet when standing outside in the rain without an umbrella. When the farmer is wet, stamina will be slowly drained. More information about the wetness system can be found on the mod page.",
 

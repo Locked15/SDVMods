@@ -2,6 +2,7 @@
 {
     public class UmbrellaConfig
     {
+        public bool EnableMod { get; internal set; } = true;
         internal bool RedrawEnabled { get; set; } = true;
         public bool EnableWetness { get; set; } = false;
         public bool NudityCompatibility { get; set; } = false;
